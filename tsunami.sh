@@ -9,14 +9,6 @@ echo "FIRST STEP"
 echo "-------Installation of the required dependencies-----"
 echo \ \ 
 
-# Choose the configuration directory 
-
-read -r -p "entrez répertoire d'install (par défaut dans /opt) : "  dir
-
-if [ -z $dir ];then 
-	dir=/opt 
-fi
-
 #Choose to update and/or upgrade
 
 while true
@@ -67,7 +59,6 @@ apt install default-jre -y
 
 echo \ \
 echo "-------Quick start via a single Script-------"
-cd $dir
 bash -c "$(curl -sfL https://raw.githubusercontent.com/google/tsunami-security-scanner/master/quick_start.sh)"
 
 #set file .jar permission
