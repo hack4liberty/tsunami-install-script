@@ -62,6 +62,8 @@ echo "-------Quick start via a single Script-------"
 bash -c "$(curl -sfL https://raw.githubusercontent.com/google/tsunami-security-scanner/master/quick_start.sh)"
 
 #set file .jar permission
+cd
+cd tsunami/
 chmod a+x tsunami-main-0.0.2-SNAPSHOT-cli.jar 
 
 
