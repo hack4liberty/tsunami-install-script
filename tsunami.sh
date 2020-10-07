@@ -13,7 +13,7 @@ echo \ \
 
 read -r -p "entrez répertoire d'install (par défaut dans /opt) : "  dir
 
-if [-z $dir ];then 
+if [ -z $dir ];then 
 	dir=/opt 
 fi
 
@@ -57,8 +57,8 @@ apt install curl -y
 
 #----Install Java----#
 echo "Java "
-apt install openjdk-11-jre
-apt install default-jre
+apt install openjdk-11-jre -y
+apt install default-jre -y
 
 ##
 ### Quick Start with a single script 
