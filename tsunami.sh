@@ -13,7 +13,7 @@ echo \ \
 
 read -r -p "entrez répertoire d'install (par défaut dans /opt) : "  dir
 
-if [-z $dir ] then 
+if [-z $dir ];then 
 	dir=/opt 
 fi
 
@@ -40,6 +40,8 @@ done
 
 echo \ \
 
+## Installation 
+
 #-----NMAP----# 
 echo "NMAP installation : "
 apt install nmap -y 
@@ -49,7 +51,15 @@ echo \ \
 echo "NCRACK Installation : "
 apt install ncrack -y
 
-#
+#----Install Curl----#
+echo "Curl installation"
+apt install curl -y 
+
+#----Install Java----#
+echo "Java "
+apt install openjdk-11-jre
+apt install default-jre
+
 ##
 ### Quick Start with a single script 
 ##
@@ -60,6 +70,8 @@ echo "-------Quick start via a single Script-------"
 cd $dir
 bash -c "$(curl -sfL https://raw.githubusercontent.com/google/tsunami-security-scanner/master/quick_start.sh)"
 
+#set file .jar permission
+chmod a+x tsunami-main-0.0.2-SNAPSHOT-cli.jar 
 
 
 exit
